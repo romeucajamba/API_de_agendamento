@@ -1,0 +1,19 @@
+{
+  "name": "restfullapi",
+  "version": "1.0.0",
+  "description": "Esta é a documentação de requisitos para a API de agendamento de contactos. Essa API permite aos usuários gerenciarem contactos, categorizá-los e realizar operações de CRUD.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "prisma": "^5.10.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
