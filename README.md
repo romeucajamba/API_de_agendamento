@@ -19,3 +19,5 @@ Os usuários devam poder adicionar novos contactos com informações como nome d
 3 - Criação de usuário
 
 ## Regras de negócio
+1 - O sistema permitir o cadastro de novos usuários
+2 - O sistema deve permitir o acesso a todas as operações

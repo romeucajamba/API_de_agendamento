@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Esta é a documentação de requisitos para a API de agendamento de contactos. Essa API permite aos usuários gerenciarem contactos, categorizá-los e realizar operações de CRUD.",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "21.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",
