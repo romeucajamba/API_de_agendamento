@@ -1,7 +1,7 @@
 import { UserCreate, UserRepository } from "../interface/user.interface";
 import { UserRepositoryPrisma } from "../repositories/user.respository";
 
-class UseCase {
+class UserUseCase {
     private userRepository: UserRepository;
 
     constructor(){
@@ -12,3 +12,5 @@ class UseCase {
 
     }
 }
+
+export { UserUseCase };
