@@ -16,6 +16,7 @@ model User {
   email String @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Contacts Contacts[]
 }
 
 model Contacts {
@@ -23,4 +24,7 @@ model Contacts {
   name String
   email String
   phone String
+  userId String
+
+  user User @relation(fields: [userId], references: [id])
 }
