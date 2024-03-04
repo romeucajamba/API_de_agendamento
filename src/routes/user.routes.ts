@@ -4,7 +4,11 @@ import { request } from "http";
 import { UserCreate } from "../interface/user.interface";
 
 
-export function userRoutes(fastify: FastifyInstance){
+export async function userRoutes(fastify: FastifyInstance){
+    fastify.get('/', (request, reply)=>{
+        reply.send( {Usuaŕio:'Navegue entre as rotas'})
+    })
+
     const userUseCase = new UserUseCase() 
 
     fastify.post<{Body: UserCreate}>('/', (request, reply) => {
@@ -17,7 +21,7 @@ export function userRoutes(fastify: FastifyInstance){
                 email,
             })
             return reply.send(data)
-            
+
         }catch (error){
             reply.send(error)
 

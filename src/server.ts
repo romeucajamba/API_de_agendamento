@@ -1,7 +1,12 @@
-import { error } from "console";
 import fastify, { FastifyInstance } from "fastify";
+import { userRoutes } from "./routes/user.routes";
+
 
 const api: FastifyInstance = fastify({logger: true})
+
+api.register(userRoutes, {
+    prefix: '/user',
+});
 
 async function runServer() {
  await api.listen({
