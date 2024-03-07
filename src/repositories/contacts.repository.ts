@@ -30,5 +30,12 @@ import { Contacts, ContactRepository, ContactCreateData } from "../interface/con
         });
         return result || null
     }
-
+    async findAllContacts(userId: string): Promise<Contacts[]> {
+        const result = await prisma.contacts.findMany({
+            where:{
+                userId,
+            }
+        });
+        return result
+    }
 }

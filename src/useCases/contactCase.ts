@@ -28,6 +28,17 @@ export class ContactsCases {
             name,
             phone,
             userId: user.id
-        })
+        });
+        return contact
+    }
+    async listAllContact(userEmail: string){
+        const user = await this.userRepository.fidByEmail(userEmail)
+
+        if(!user){
+            throw new Error('Usuário não encontrado!!')
+        }
+        const contact = await this.contectRepository.findAllContacts(user.id);
+        
+        return contact;
     }
 }

@@ -28,7 +28,14 @@ export async function contactRoutes(fastify: FastifyInstance){
         }
     });
 
-    fastify.get('/', (request, reply)=>{
-        reply.send( {Usuaŕio:'Para saber sobre o contacto navegue entre as rotas'})
+    fastify.get('/', async (request, reply)=>{
+        const emailSearch = request.headers['email']
+
+       try {
+            const data = await contactCase.listAllContact(userEmail)
+        
+       } catch (error) {
+            reply.send(error)
+       }
     });
 }
