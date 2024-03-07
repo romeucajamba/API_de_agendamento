@@ -12,6 +12,7 @@ export interface UserCreate {
 }
 
 export interface UserRepository {
-    create(data: UserCreate): Promise<User>
-    fidByEmail(email: string): Promise<User | null> 
+    create(data: UserCreate): Promise<User>;
+    fidByEmail(email: string): Promise<User | null>;
+    updateContact(data: User): Promise<User>;  
 }

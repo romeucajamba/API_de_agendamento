@@ -1,4 +1,4 @@
-import {ContactRepository, ContactCreate } from "../interface/contacts.interface";
+import {ContactRepository, ContactCreate, Contacts } from "../interface/contacts.interface";
 import { ContactsRepositoryPrisma } from '../repositories/contacts.repository';
 import { UserRepositoryPrisma } from '../repositories/user.respository';
 import { UserRepository } from '../interface/user.interface';
@@ -40,5 +40,17 @@ export class ContactsCases {
         const contact = await this.contectRepository.findAllContacts(user.id);
         
         return contact;
+    }
+
+    async updateContact({id, name, email, phone}: Contacts){
+        const data = await this.contectRepository.updateContact({id, name, email, phone})
+
+        return data
+    };
+    async delete(id: string){
+        const result = await this.contectRepository.delete(id)
+
+        return result
+
     }
 }
