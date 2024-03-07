@@ -51,4 +51,12 @@ import { Contacts, ContactRepository, ContactCreateData } from "../interface/con
         });
         return result
     }
+    async delete(id: string): Promise<boolean> {
+        const result = await prisma.contacts.delete({
+            where:{
+                id
+            }
+        });
+        return result ? true : false
+    }
 }

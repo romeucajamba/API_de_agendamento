@@ -47,10 +47,5 @@ export class ContactsCases {
 
         return data
     };
-    async delete(id: string){
-        const result = await this.contectRepository.delete(id)
-
-        return result
-
-    }
+   
 }

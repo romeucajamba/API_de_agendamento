@@ -25,7 +25,7 @@ export interface ContactCreateData {
     findEmailOrPhone(email: String, phone: String): Promise<Contacts | null>;
     findAllContacts(userId: string): Promise<Contacts[]>;
     updateContact({id, name, email, phone}: Contacts): Promise<Contacts>;
-    delete(id:string): Promise<Boolean>
+    delete(id:string): Promise<boolean>
 }
 
 export { ContactRepository }
