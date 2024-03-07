@@ -1,22 +1,18 @@
 import { FastifyInstance } from "fastify";
 import { UserUseCase } from "../useCases/use.cases";
-import { request } from "http";
 import { UserCreate } from "../interface/user.interface";
 
 
 export async function userRoutes(fastify: FastifyInstance){
-    fastify.get('/', (request, reply)=>{
-        reply.send( {Usuaŕio:'Navegue entre as rotas'})
-    })
 
-    const userUseCase = new UserUseCase() 
+    const userUseCase = new UserUseCase() ;
 
-    fastify.post<{Body: UserCreate}>('/', (request, reply) => {
+    fastify.post<{Body: UserCreate}>('/',  async (request, reply) => {
 
         const {name, email } = request.body;
 
         try{
-            const data = userUseCase.create({
+            const data = await userUseCase.create({
                 name,
                 email,
             })
@@ -26,5 +22,9 @@ export async function userRoutes(fastify: FastifyInstance){
             reply.send(error)
 
         }
-    })
+    });
+
+    fastify.get('/', (request, reply)=>{
+        reply.send( {Usuaŕio:'Navegue entre as rotas'})
+    });
 }
