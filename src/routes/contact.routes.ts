@@ -54,10 +54,7 @@ export async function contactRoutes(fastify: FastifyInstance){
         const { id } = request.params;
 
         try {
-            const result = await prisma.contacts.delete({
-            
-                    id
-            });
+            const result = await prisma.contacts.delete(id);
             return reply.send(result)
         } catch (error) {
             return reply.send(error)

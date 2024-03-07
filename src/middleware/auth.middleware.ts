@@ -1,4 +1,6 @@
-export function authMiddleware(req, reply) {
+import { FastifyReply, FastifyRequest } from "fastify";
+
+export function authMiddleware(req: FastifyRequest, reply: FastifyReply) {
     const apiEmail = req.headers['email'];
 
     if(!apiEmail) {
